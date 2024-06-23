@@ -25,7 +25,9 @@ module.exports = {
     static: "./dist",
     // set false to hot & client for no reload
     hot: true, // true/false
-    client: false, // either false or an object { logging?, overlay?, progress?, reconnect?, webSocketTransport?, webSocketURL? }
+    client: {
+        logging:"info",
+    }, // either false or an object { logging?, overlay?, progress?, reconnect?, webSocketTransport?, webSocketURL? }
     port: 8081,
   },
 
