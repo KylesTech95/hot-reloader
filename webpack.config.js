@@ -18,14 +18,26 @@ module.exports = {
     clean: true,
   },
   module: {
-    rules: [{ test: /\.js/i, exclude: /node_modules/i }], // js files 
+    rules: [{ test: /\.js/i, exclude: /node_modules/i }], // js files
   },
   devtool: "source-map",
   devServer: {
     static: "./dist",
     // set false to hot & client for no reload
-    hot: true, // true/false
+    hot: false, // true/false
     client: false, // either false or an object { logging?, overlay?, progress?, reconnect?, webSocketTransport?, webSocketURL? }
+    // client: {
+    //   overlay: {
+    //     // object or true [cli] npx webpack serve --client-overlay-errors --no-client-overlay-warnings --client-overlay-runtime-errors
+    //     errors: true,
+    //     warnings: false,
+    //     runtimeErrors: true,
+    //   },
+    //   logging: "info", // 'log' | 'info' | 'warn' | 'error' | 'none' | 'verbose'
+    //   progress: true,
+    //   reconnect: 5, // set # of times for client to reconnect to server || true for unlimited
+    // },
+    compress: true, // enable gzip for served files
     port: 8081,
   },
 
